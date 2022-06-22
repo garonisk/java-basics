@@ -1,17 +1,29 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String username = "garonis";
-        String password = "123abc!@#";
-        System.out.println("Enter username:");
-        String usernamein = input.nextLine();
-        System.out.println("Enter password:");
-        String passwordin = input.nextLine();
-        if (usernamein.equals(username) && (passwordin.equals(password))){
-            System.out.println("Access Completed");}
-        else {
-            System.out.println("Access Denied");
+
+        Random random= new Random();
+        int machine = random.nextInt(2);
+        System.out.println("Enter petra 0 - molivi 1 - charti 2 :");
+        int userin = input.nextInt();
+        if (machine == userin){
+            System.out.println("Its a draw!!! ");
+        }else if (machine == 0 && userin == 1 ){
+            System.out.println("Machine wins!");
+        }else if (machine == 0 && userin == 2){
+            System.out.println("Player wins!!!");
+        }else if (machine == 1 && userin == 0){
+            System.out.println("Player wins!!!");
+        }else if (machine == 1 && userin == 2){
+            System.out.println("Machine wins!!!");
+        }else if (machine == 2 && userin == 0){
+            System.out.println("Machine wins!!!");
+        }else{
+            System.out.println("Player wins!!!");
         }
     }}
+
